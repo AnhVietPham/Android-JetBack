@@ -1,3 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/mobile_navigation" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.androidjetback.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_chooserRecipientFragment"
+            app:destination="@id/chooserRecipientFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_viewTransactionFragment"
+            app:destination="@id/viewTransactionFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_viewBalanceFragment"
+            app:destination="@id/viewBalanceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chooserRecipientFragment"
+        android:name="com.example.androidjetback.ChooserRecipientFragment"
+        android:label="ChooserRecipientFragment" >
+        <action
+            android:id="@+id/action_chooserRecipientFragment_to_specifyAmountFragment"
+            app:destination="@id/specifyAmountFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.example.androidjetback.ConfirmationFragment"
+        android:label="ConfirmationFragment" />
+    <fragment
+        android:id="@+id/specifyAmountFragment"
+        android:name="com.example.androidjetback.SpecifyAmountFragment"
+        android:label="SpecifyAmountFragment" >
+        <action
+            android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewBalanceFragment"
+        android:name="com.example.androidjetback.ViewBalanceFragment"
+        android:label="ViewBalanceFragment" />
+
+    <fragment
+        android:id="@+id/viewTransactionFragment"
+        android:name="com.example.androidjetback.ViewTransactionFragment"
+        android:label="ViewTransactionFragment" />
+</navigation>
