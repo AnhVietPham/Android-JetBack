@@ -39,20 +39,52 @@
         android:label="ChooserRecipientFragment" >
         <action
             android:id="@+id/action_chooserRecipientFragment_to_specifyAmountFragment"
-            app:destination="@id/specifyAmountFragment" />
+            app:destination="@id/specifyAmountFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+
+        <argument
+            android:name="recipient"
+            app:argType="string"
+            android:defaultValue="Nobody"
+            />
+
     </fragment>
 
     <fragment
         android:id="@+id/confirmationFragment"
         android:name="com.example.androidjetback.ConfirmationFragment"
-        android:label="ConfirmationFragment" />
+        android:label="ConfirmationFragment" >
+        <argument
+            android:name="recipient"
+            android:defaultValue="Anh Viet Pham"
+            />
+        <argument
+            android:name="money"
+            app:argType="com.example.androidjetback.Money"
+            />
+    </fragment>
     <fragment
         android:id="@+id/specifyAmountFragment"
         android:name="com.example.androidjetback.SpecifyAmountFragment"
         android:label="SpecifyAmountFragment" >
+
+        <argument
+            android:name="recipient"
+            android:defaultValue="None"
+            />
+
         <action
             android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
-            app:destination="@id/confirmationFragment" />
+            app:destination="@id/confirmationFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
     </fragment>
 
     <fragment
